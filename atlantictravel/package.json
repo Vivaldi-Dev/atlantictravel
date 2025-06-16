@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-icons": "^2.2.7",
+    "framer-motion": "^12.18.1",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-datepicker": "^8.4.0",
