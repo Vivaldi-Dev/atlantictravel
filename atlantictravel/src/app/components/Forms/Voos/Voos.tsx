@@ -60,7 +60,7 @@ export default function Voos() {
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
-              placeholderText="dd/mm/aaa"
+              placeholderText="Data de inicio"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
               dateFormat="dd/MM/yyyy"
             />
@@ -70,7 +70,7 @@ export default function Voos() {
             <DatePicker
               selected={endDate}
               onChange={(date) => setEndDate(date)}
-              placeholderText="dd/mm/aaaa"
+              placeholderText="Data do fim"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
               dateFormat="dd/MM/yyyy"
               minDate={startDate}
