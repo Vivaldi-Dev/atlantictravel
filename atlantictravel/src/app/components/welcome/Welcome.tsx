@@ -49,7 +49,6 @@ export default function Welcome() {
         </motion.div>
       </div>
 
-      {/* Grid de cards */}
       <div className="welcome-cards container mx-auto mt-16 mb-12 px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[

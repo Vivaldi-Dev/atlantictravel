@@ -3,6 +3,7 @@ import Header from "./components/navbar/Header";
 import Banner from "./components/banner/Banner";
 import Welcome from "./components/welcome/Welcome";
 import TripleSlider from "./components/sliders/TripleSlider";
+import WhaySection from "./components/sectionwhy/Whay";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Banner />
       <Welcome />
       <TripleSlider />
+      <WhaySection />
     </div>
   );
 }
