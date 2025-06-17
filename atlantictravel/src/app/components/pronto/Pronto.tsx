@@ -68,6 +68,7 @@ export default function Pronto() {
           </motion.p>
         </div>
       </div>
+      
     </motion.div>
   )
 }
