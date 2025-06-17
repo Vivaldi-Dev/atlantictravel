@@ -4,6 +4,7 @@ import Banner from "./components/banner/Banner";
 import Welcome from "./components/welcome/Welcome";
 import TripleSlider from "./components/sliders/TripleSlider";
 import WhaySection from "./components/sectionwhy/Whay";
+import Pacotes from "./components/pacotes/Pacotes";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Welcome />
       <TripleSlider />
       <WhaySection />
+      <Pacotes />
     </div>
   );
 }
