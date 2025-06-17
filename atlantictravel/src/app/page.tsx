@@ -5,6 +5,7 @@ import Welcome from "./components/welcome/Welcome";
 import TripleSlider from "./components/sliders/TripleSlider";
 import WhaySection from "./components/sectionwhy/Whay";
 import Pacotes from "./components/pacotes/Pacotes";
+import Pronto from "./components/pronto/Pronto";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <TripleSlider />
       <WhaySection />
       <Pacotes />
+      <Pronto />
     </div>
   );
 }
