@@ -7,6 +7,7 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import Image from 'next/image'
+import { motion, useInView, stagger, animate } from 'framer-motion'
 
 const slides = [
     { title: 'Pacotes turísticos personalizados', image: '/img1.jpg' },
@@ -17,6 +18,8 @@ const slides = [
 
 export default function PerfectCoverflowSlider() {
     const swiperRef = useRef<any>(null)
+    const containerRef = useRef(null)
+    const isInView = useInView(containerRef, { once: true, amount: 0.1 })
     const middleSlideIndex = Math.floor(slides.length / 2) - 1
 
     useEffect(() => {
@@ -26,58 +29,84 @@ export default function PerfectCoverflowSlider() {
     }, [])
 
     return (
-        <div className="w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden">
+        <motion.div 
+            ref={containerRef}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+            className="w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden"
+        >
             <div className="container mx-auto px-4">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
-                    <div className="text-center lg:text-left">
-                        <h2 className="text-3xl font-bold text-[#0871B5] ">Serviços em </h2>
-                        <h2 className="text-3xl font-bold text-[#0871B5] ">Destaque da</h2>
-                        <h2 className="text-3xl font-bold text-[#0871B5] ">Atlantic Travel</h2>
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8 }}
+                        className="text-center lg:text-left"
+                    >
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.2 }}
+                            className="text-3xl font-bold text-[#0871B5]"
+                        >
+                            Serviços em 
+                        </motion.h2>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.3 }}
+                            className="text-3xl font-bold text-[#0871B5]"
+                        >
+                            Destaque da
+                        </motion.h2>
+                        <motion.h2 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.4 }}
+                            className="text-3xl font-bold text-[#0871B5]"
+                        >
+                            Atlantic Travel
+                        </motion.h2>
 
-                        <div>
-                            <div className='flex items-center gap-3 mt-10 mb-4'>
-                                <Image
-                                    src="/icons/seguro.png"
-                                    alt="Descrição da imagem"
-                                    width={20}
-                                    height={20}
-                                />
-                                <p className='font-semibold'>Seguros de viagem e assistência <br /> em vistos</p>
-                            </div>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 1 } : {}}
+                            transition={{ delay: 0.5 }}
+                        >
+                            {[
+                                { icon: '/icons/seguro.png', text: 'Seguros de viagem e assistência\nem vistos' },
+                                { icon: '/icons/car.png', text: 'Reserva de Hotéis &\nTransfers' },
+                                { icon: '/icons/Island.png', text: 'Pacotes turísticos\npersonalizados' },
+                                { icon: '/icons/aviao.png', text: 'Consultoria dedicada' }
+                            ].map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                    transition={{ delay: 0.6 + index * 0.1 }}
+                                    className='flex items-center gap-3 mt-10 mb-4'
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <Image
+                                        src={item.icon}
+                                        alt="Ícone"
+                                        width={20}
+                                        height={20}
+                                    />
+                                    <p className='font-semibold whitespace-pre-line'>{item.text}</p>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
 
-                            <div className='flex items-center gap-3 mb-4'>
-                                <Image
-                                    src="/icons/car.png"
-                                    alt="Descrição da imagem"
-                                    width={20}
-                                    height={20}
-                                />
-                                <p className='font-semibold'>Reserva de Hotéis & <br /> Transfers</p>
-                            </div>
-
-                            <div className='flex items-center gap-3 mb-4'>
-                                <Image
-                                    src="/icons/Island.png"
-                                    alt="Descrição da imagem"
-                                    width={20}
-                                    height={20}
-                                />
-                                <p className='font-semibold'> Pacotes turísticos <br /> personalizados</p>
-                            </div>
-
-                            <div className='flex items-center gap-3 mb-4'>
-                                <Image
-                                    src="/icons/aviao.png"
-                                    alt="Descrição da imagem"
-                                    width={20}
-                                    height={20}
-                                />
-                                <p className='font-semibold'> Consultoria dedicada</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="relative">
+                    {/* Seção do carrossel à direita */}
+                    <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="relative"
+                    >
                         <Swiper
                             ref={swiperRef}
                             effect="coverflow"
@@ -107,44 +136,60 @@ export default function PerfectCoverflowSlider() {
                                     key={i}
                                     className="!w-[280px] !h-[380px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 ease-out"
                                 >
-                                    <div
+                                    <motion.div
                                         className="relative w-full h-full bg-cover bg-center"
                                         style={{ backgroundImage: `url(${slide.image})` }}
+                                        whileHover={{ scale: 1.03 }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                         <div className="absolute bottom-0 left-0 right-0 p-4">
-                                            <h3 className="text-white text-lg font-bold mb-2">{slide.title}</h3>
-                                            <button
-                                                className="ml-auto w-8 h-8 bg-[#FFF700] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                                            <motion.h3 
+                                                className="text-white text-lg font-bold mb-2"
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: 0.2 }}
+                                                viewport={{ once: true }}
+                                            >
+                                                {slide.title}
+                                            </motion.h3>
+                                            <motion.button
+                                                className="ml-auto w-8 h-8 bg-[#FFF700] rounded-full flex items-center justify-center"
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 0.9 }}
                                                 onClick={(e) => {
                                                     e.stopPropagation()
                                                     console.log('Botão clicado no slide:', i)
                                                 }}
                                             >
                                                 <FiArrowRight className="text-black text-base" />
-                                            </button>
+                                            </motion.button>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
 
-                        <button 
-                            className="swiper-button-prev-custom absolute top-1/2 -translate-y-1/2 left-4 z-20 w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg"
+                        <motion.button 
+                            className="swiper-button-prev-custom absolute top-1/2 -translate-y-1/2 left-4 z-20 w-10 h-10 bg-black rounded-full flex items-center justify-center shadow-lg"
                             aria-label="Anterior"
+                            whileHover={{ scale: 1.1, backgroundColor: '#333' }}
+                            whileTap={{ scale: 0.9 }}
                         >
                             <FiChevronLeft className="text-white text-xl" />
-                        </button>
+                        </motion.button>
                         
-                        <button 
-                            className="swiper-button-next-custom absolute top-1/2 -translate-y-1/2 right-4 z-20 w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg"
+                        <motion.button 
+                            className="swiper-button-next-custom absolute top-1/2 -translate-y-1/2 right-4 z-20 w-10 h-10 bg-black rounded-full flex items-center justify-center shadow-lg"
                             aria-label="Próximo"
+                            whileHover={{ scale: 1.1, backgroundColor: '#333' }}
+                            whileTap={{ scale: 0.9 }}
                         >
                             <FiChevronRight className="text-white text-xl" />
-                        </button>
-                    </div>
+                        </motion.button>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
