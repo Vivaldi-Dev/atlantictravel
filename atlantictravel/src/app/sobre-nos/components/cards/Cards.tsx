@@ -69,8 +69,7 @@ export default function Cards() {
   return (
     <div 
       ref={ref}
-      className={`w-full py-8 bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden ${inter.variable} font-sans`}
-    >
+      className={`w-full py-8 bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden  ${inter.variable} font-sans`}>
       <div className='container mx-auto px-4'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

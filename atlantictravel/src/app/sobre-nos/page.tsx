@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Inter } from 'next/font/google';
 import Cards from './components/cards/Cards';
+import Grid from './components/grid/Grid';
 
 
 const inter = Inter({
@@ -76,6 +77,7 @@ export default function Banner() {
                 </div>
             </div>
             <Cards />
+            <Grid />
         </div>
 
     )
