@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import Cards from './components/cards/Cards';
 import Grid from './components/grid/Grid';
 import Ready from './components/pronto/Ready';
+import Customer from './components/customer/Customer';
 
 
 const inter = Inter({
@@ -80,6 +81,7 @@ export default function Banner() {
             <Cards />
             <Grid />
             <Ready />
+            <Customer />
         </div>
 
     )

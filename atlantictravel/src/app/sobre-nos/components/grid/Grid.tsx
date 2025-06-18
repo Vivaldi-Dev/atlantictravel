@@ -17,8 +17,7 @@ export default function Grid() {
     return (
         <div
             ref={ref}
-            className={`w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden mt-16 ${playfair.variable} font-playfair`}
-        >
+            className={`w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden mt-16 ${playfair.variable} font-playfair`}>
             <div className='container mx-auto px-4'>
                 <motion.div
                     initial={{ opacity: 0 }}
