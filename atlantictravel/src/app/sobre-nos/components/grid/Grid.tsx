@@ -27,22 +27,23 @@ export default function Grid() {
                     className='mb-10'
                 >
                     <p className="text-xl">O nosso lema</p>
-                    <p className="text-2xl md:text-3xl italic font-bold">"o planeamento personalizado e seguro da sua viagem"</p>
+                    <p className="text-lg md:text-xl italic font-bold">"o planeamento personalizado e seguro da sua viagem"</p>
                 </motion.div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-20 items-start'> {/* Alterado para items-start */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-20 items-start'>
                     <div>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.5 }}
-                            className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4'
-                        >
+                            whileHover={{ y: -5 }}
+                            whileTap={{ scale: 0.98 }}
+                            className='border-[#0871B5] border p-4 rounded-2xl mb-4 cursor-pointer shadow-md'>
+
                             <div className='flex gap-4'>
                                 <motion.div
                                     whileHover={{ rotate: 15 }}
-                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'
-                                >
+                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'>
                                     <Image
                                         src="/icons/aviaop.png"
                                         alt="Ícone de avião"
@@ -50,35 +51,36 @@ export default function Grid() {
                                         height={20}
                                     />
                                 </motion.div>
+
                                 <div>
                                     <p className='font-bold text-black text-sm'>O que nos move?</p>
-                                    <div className='text-[#000000A6]'>
+                                    <div className='text-[#000000A6] text-sm'>
                                         <p>Acreditamos que cada viagem é única, e cada cliente também. Por isso, criamos</p>
-                                        <p>soluções à medida de cada história, com pacotes que respeitam o teu ritmo</p>
+                                        <p>soluções à medida de cada história, com pacotes que respeitam o teu ritmo,</p>
                                         <p>orçamento e estilo de vida. Mais que levar-te a um destino, queremos</p>
-                                        <p>caminhar contigo durante toda a jornada</p>
+                                        <p>caminhar contigo durante toda a jornada.</p>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
 
+
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4 bg-[#EECE2B2E]'
-                        >
+                            transition={{ duration: 0.5 }}
+                            whileHover={{ y: -5 }}
+                            whileTap={{ scale: 0.98 }}
+                            className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4 bg-[#EECE2B2E]'>
                             <div className='flex gap-4'>
                                 <motion.div
                                     whileHover={{ rotate: 15 }}
-                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'
-                                >
+                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'>
                                     <Image
                                         src="/icons/MicrosoftTeamsLogo.png"
                                         alt="Ícone de equipe"
                                         width={30}
-                                        height={40}
-                                    />
+                                        height={40} />
                                 </motion.div>
                                 <div>
                                     <p className='font-bold text-black text-sm'>A nossa equipa</p>
@@ -96,7 +98,9 @@ export default function Grid() {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.5, delay: 0.4 }}
+                            transition={{ duration: 0.10 }}
+                            whileHover={{ y: -5 }}
+                            whileTap={{ scale: 0.98 }}
                             className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4'
                         >
                             <div className='flex gap-4'>

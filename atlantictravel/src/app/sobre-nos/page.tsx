@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Inter } from 'next/font/google';
 import Cards from './components/cards/Cards';
 import Grid from './components/grid/Grid';
+import Ready from './components/pronto/Ready';
 
 
 const inter = Inter({
@@ -78,6 +79,7 @@ export default function Banner() {
             </div>
             <Cards />
             <Grid />
+            <Ready />
         </div>
 
     )
