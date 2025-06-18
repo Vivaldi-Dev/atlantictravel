@@ -23,8 +23,8 @@ export default function Grid() {
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.6 }}
-                    className='mb-10'
-                >
+                    className='mb-10'>
+
                     <p className="text-xl">O nosso lema</p>
                     <p className="text-lg md:text-xl italic font-bold">"o planeamento personalizado e seguro da sua viagem"</p>
                 </motion.div>
@@ -100,13 +100,11 @@ export default function Grid() {
                             transition={{ duration: 0.10 }}
                             whileHover={{ y: -5 }}
                             whileTap={{ scale: 0.98 }}
-                            className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4'
-                        >
+                            className='border-[#0871B5] border-1 p-4 rounded-2xl mb-4'>
                             <div className='flex gap-4'>
                                 <motion.div
                                     whileHover={{ rotate: 15 }}
-                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'
-                                >
+                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'>
                                     <Image
                                         src="/icons/planta.png"
                                         alt="Ícone de sustentabilidade"
@@ -137,8 +135,7 @@ export default function Grid() {
                             alt="Viagem de luxo"
                             fill
                             className="object-cover rounded-lg"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                        />
+                            sizes="(max-width: 768px) 100vw, 50vw"/>
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}

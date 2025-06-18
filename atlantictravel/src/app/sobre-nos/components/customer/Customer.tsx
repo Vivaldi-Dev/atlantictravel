@@ -19,8 +19,7 @@ export default function Customer() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className='text-xl font-semibold mb-12 text-center'
-      >
+        className='text-xl font-semibold mb-12 text-center'>
         Nossos Clientes
       </motion.p>
       
