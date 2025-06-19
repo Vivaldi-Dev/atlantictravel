@@ -95,8 +95,8 @@ export default function WhySection() {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={isInView ? { scale: 1, opacity: 1 } : {}}
                         transition={{ delay: 0.6 }}
-                        className='flex justify-center h-full'
-                    >
+                        className='flex justify-center h-full'>
+                            
                         <div className='relative w-full h-[550px]'>
                             <Image
                                 src="/fly.jpg"

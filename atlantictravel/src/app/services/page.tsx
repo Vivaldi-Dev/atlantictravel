@@ -1,34 +1,44 @@
 'use client'
 import React from 'react'
-import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google'
+import Cards from './components/Cards/Cards'
+import Section from './components/section/Section'
+import Seguros from './components/seguros/Seguros'
+import Hospedagem from './components/hospedagem/Hospedagem'
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['400', '700']
+  weight: ['400', '700'],
 })
 
 export default function Banner() {
   return (
-    <div>
-      <div className={`relative w-full h-screen max-h-[600px] bg-cover bg-center bg-no-repeat bg-[url('/banner3.jpg')] ${inter.variable} font-sans`}>
-        <div className={`max-w-2xl ${inter.variable} font-inter`}>
 
-          <p className='text-white text-sm md:text-base leading-none	'>
-            VIAGENS INTERNACIONAIS | VIAGENS NACIONAIS
-          </p>
+    <div >
+      <div className={`relative w-full h-screen max-h-[500px] bg-cover bg-center bg-no-repeat bg-[url('/banner3.jpg')] ${inter.variable} font-sans`}>
+        <div className="banner-overlay absolute inset-0 bg-gradient-to-r from-black/20 to-black/30 z-0" />
 
-          <h1 className='text-[#FFF700] text-4xl md:text-6xl lg:text-7xl  font-bold leading-none	 '>
-            Atlantic Travel
-          </h1>
+        <div className="relative z-10 flex items-center justify-start h-full px-14">
+          <div className=" max-w-3xl">
+            <p className="text-white text-sm  tracking-wide">
+              VIAGENS INTERNACIONAIS | VIAGENS NACIONAIS
+            </p>
 
-          <h2 className='text-[#FFF700] text-3xl md:text-5xl lg:text-6xl  font-bold leading-tight '>
-            Serviços Completos para Todas as Suas <br /> Necessidades de Viagem
-          </h2>
+            <h1 className="text-[#FFF700] text-4xl md:text-6xl font-bold  leading-none drop-shadow">
+              Atlantic Travel
+            </h1>
 
+            <h2 className="text-white text-2xl  font-semibold leading-snug drop-shadow">
+              Serviços Completos para Todas as Suas <br /> Necessidades de Viagem
+            </h2>
+          </div>
         </div>
       </div>
-
+      <Cards />
+      <Section />
+      <Seguros />
+      <Hospedagem />
     </div>
 
   )
