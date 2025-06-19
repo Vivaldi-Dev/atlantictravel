@@ -1,6 +1,7 @@
 import React from 'react'
 import { Inter } from 'next/font/google'
 import LayoutCards from './components/LayoutCard/LayoutCards'
+import GridLyout from './components/grid/GridLyout'
 
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function page() {
                 </div>
             </div>
             <LayoutCards />
+            <GridLyout />
         </div>
     )
 }
