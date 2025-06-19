@@ -9,6 +9,7 @@ import Transfer from './components/transfer/Transfer'
 import Eventos from './components/eventos/Eventos'
 import Rent from './components/rent/Rent'
 import Reembolsos from './components/reembolsos/Reembolsos'
+import Banners from './components/banner/Banners'
 
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function Banner() {
       <Eventos />
       <Rent />
       <Reembolsos />
+      <Banners />
     </div>
 
   )
