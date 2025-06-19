@@ -37,7 +37,7 @@ export default function Header() {
                                 <Link href="/sobre-nos" className="text-[#0871B5] font-semibold text-nowrap text-sm">Sobre Nós</Link>
                             </li>
                             <li>
-                                <Link href="/servicos" className="text-[#0871B5] font-semibold text-nowrap text-sm">Serviços</Link>
+                                <Link href="/services" className="text-[#0871B5] font-semibold text-nowrap text-sm">Serviços</Link>
                             </li>
                             <li>
                                 <Link href="/pacotes" className="text-[#0871B5] font-semibold text-nowrap text-sm">Pacotes Turísticos</Link>
