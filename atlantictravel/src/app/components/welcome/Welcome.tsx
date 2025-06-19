@@ -4,7 +4,6 @@ import React from 'react';
 import { Inter } from 'next/font/google';
 import { motion, useInView } from 'framer-motion';
 
-// Configuração da fonte
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -12,12 +11,10 @@ const inter = Inter({
 });
 
 export default function Welcome() {
-  // Referência para detectar quando o componente está visível
   const containerRef = React.useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   return (
-    // Container principal com gradiente de fundo
     <motion.section
       ref={containerRef}
       initial={{ opacity: 0, y: 50 }}
@@ -25,7 +22,6 @@ export default function Welcome() {
       transition={{ duration: 0.8 }}
       className={`welcome-container ${inter.className} bg-gradient-to-b from-cyan-100 to-white py-16 px-6 sm:px-8`}
     >
-      {/* Cabeçalho com título */}
       <div className="welcome-header text-center">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
