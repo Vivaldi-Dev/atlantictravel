@@ -5,6 +5,10 @@ import Cards from './components/Cards/Cards'
 import Section from './components/section/Section'
 import Seguros from './components/seguros/Seguros'
 import Hospedagem from './components/hospedagem/Hospedagem'
+import Transfer from './components/transfer/Transfer'
+import Eventos from './components/eventos/Eventos'
+import Rent from './components/rent/Rent'
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -39,6 +43,9 @@ export default function Banner() {
       <Section />
       <Seguros />
       <Hospedagem />
+      <Transfer />
+      <Eventos />
+      <Rent />
     </div>
 
   )
