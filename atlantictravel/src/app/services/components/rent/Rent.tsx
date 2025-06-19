@@ -17,7 +17,8 @@ export default function Rent() {
     return (
         <div
             ref={ref}
-            className={`bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden py-16 ${inter.variable} font-sans`}>
+            className={`bg-gradient-to-b from-[#fff]  relative overflow-hidden py-16 ${inter.variable} font-sans`}>
+            className={`bg-gradient-to-b from-[#fff]  relative overflow-hidden py-16 ${inter.variable} font-sans`}>
             <div className='container mx-auto px-4'>
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
