@@ -12,7 +12,7 @@ const inter = Inter({
 
 export default function Activity() {
   const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
+  // const [endDate, setEndDate] = useState<Date | null>(null);
   const [idaEVolta, setIdaEVolta] = useState(true);
 
 
@@ -58,7 +58,7 @@ export default function Activity() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
           <div>
             <DatePicker
-              selected={startDate}
+              selected={startDate ?? undefined}
               onChange={(date) => setStartDate(date)}
               placeholderText="Data de inicio"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
@@ -68,12 +68,11 @@ export default function Activity() {
 
           <div>
             <DatePicker
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              placeholderText="Data do fim"
+              selected={startDate ?? undefined}
+              onChange={(date) => setStartDate(date)}
+              placeholderText="Data de inicio"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
               dateFormat="dd/MM/yyyy"
-              minDate={startDate}
             />
           </div>
         </div>

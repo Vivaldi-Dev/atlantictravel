@@ -62,7 +62,7 @@ export default function RentCar() {
               placeholderText="Data de devolução"
               className="mt-1 w-full rounded px-3 py-2 bg-[#D9D9D975] focus:outline-none focus:ring-2 focus:ring-[#0871B5]"
               dateFormat="dd/MM/yyyy"
-              minDate={pickupDate}
+              minDate={pickupDate || undefined}
             />
           </div>
         </div>
