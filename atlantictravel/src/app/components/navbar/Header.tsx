@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <>
-            <div className='max-w-[1640px] mx-auto bg-white shadow p-4'>
+            <div className='max-w-[1640px] mx-auto  p-4'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center '>
                         <Image
