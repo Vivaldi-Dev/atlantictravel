@@ -26,7 +26,7 @@ export default function Grid() {
                     className='mb-10'>
 
                     <p className="text-xl">O nosso lema</p>
-                    <p className="text-lg md:text-xl italic font-bold">"o planeamento personalizado e seguro da sua viagem"</p>
+                    <p className="text-lg md:text-xl italic font-bold">&quot;o planeamento personalizado e seguro da sua viagem&quot;</p>
                 </motion.div>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-20 items-start'>
@@ -88,7 +88,7 @@ export default function Grid() {
                                         <p>consultores experientes, emissores técnicos, gestores operacionais e motoristas</p>
                                         <p>dedicados, todos alinhados com o nosso compromisso com a excelência</p>
                                         <p>Acreditamos no poder de uma boa viagem. Uma que transforma. Que aproxima</p>
-                                        <p>Que renova.” Equipe AtlanticTrave</p>
+                                        <p>Que renova.&quot; Equipe AtlanticTravel</p>
                                     </div>
                                 </div>
                             </div>

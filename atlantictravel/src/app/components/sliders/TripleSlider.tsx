@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow, Navigation } from 'swiper/modules'
+import { Swiper as SwiperType } from 'swiper/types'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
@@ -24,20 +25,20 @@ const menuItems = [
 ]
 
 export default function PerfectCoverflowSlider() {
-  const swiperRef = useRef<any>(null)
-  const containerRef = useRef(null)
+  const swiperRef = useRef<SwiperType | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.1 })
   const [activeMenuItem, setActiveMenuItem] = useState('pacotes')
 
   const handleMenuItemClick = (itemId: string) => {
     const slideIndex = slides.findIndex(slide => slide.id === itemId)
-    if (slideIndex !== -1 && swiperRef.current?.swiper) {
-      swiperRef.current.swiper.slideToLoop(slideIndex)
+    if (slideIndex !== -1 && swiperRef.current) {
+      swiperRef.current.slideToLoop(slideIndex)
       setActiveMenuItem(itemId)
     }
   }
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperType) => {
     const slideId = slides[swiper.realIndex]?.id
     if (slideId) {
       setActiveMenuItem(slideId)
@@ -46,8 +47,8 @@ export default function PerfectCoverflowSlider() {
 
   useEffect(() => {
     const middleIndex = Math.floor(slides.length / 2)
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideToLoop(middleIndex)
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(middleIndex)
       setActiveMenuItem(slides[middleIndex].id)
     }
   }, [])
@@ -100,7 +101,7 @@ export default function PerfectCoverflowSlider() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative">
             <Swiper
-              ref={swiperRef}
+              onSwiper={(swiper) => swiperRef.current = swiper}
               effect="coverflow"
               grabCursor={true}
               centeredSlides={true}

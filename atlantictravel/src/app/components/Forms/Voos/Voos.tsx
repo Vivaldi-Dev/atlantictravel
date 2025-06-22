@@ -1,9 +1,10 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, FormEvent } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Inter } from 'next/font/google';
 import { useAirportSearch } from '@/hooks/useAirportSearch';
+import { useRouter } from 'next/navigation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,21 +21,22 @@ interface Airport {
 }
 
 export default function Voos() {
+  const router = useRouter();
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [idaEVolta, setIdaEVolta] = useState(true);
-  
-  // Estados para origem e destino
+  const [adultos, setAdultos] = useState(1);
+  const [criancas, setCriancas] = useState(0);
+
   const [origem, setOrigem] = useState('');
   const [destino, setDestino] = useState('');
   const [selectedOrigem, setSelectedOrigem] = useState<Airport | null>(null);
   const [selectedDestino, setSelectedDestino] = useState<Airport | null>(null);
-  
-  // Refs para os containers das sugestões
+
   const origemRef = useRef<HTMLDivElement>(null);
   const destinoRef = useRef<HTMLDivElement>(null);
-  
-  // Usando a hook para busca de aeroportos
+
+
   const {
     searchTerm: origemSearchTerm,
     setSearchTerm: setOrigemSearchTerm,
@@ -42,7 +44,7 @@ export default function Voos() {
     loading: origemLoading,
     error: origemError
   } = useAirportSearch();
-  
+
   const {
     searchTerm: destinoSearchTerm,
     setSearchTerm: setDestinoSearchTerm,
@@ -51,7 +53,6 @@ export default function Voos() {
     error: destinoError
   } = useAirportSearch();
 
-  // Debug logs
   useEffect(() => {
     console.log('Origem state:', {
       searchTerm: origemSearchTerm,
@@ -70,7 +71,6 @@ export default function Voos() {
     });
   }, [destinoSearchTerm, destinoSuggestions, destinoLoading, destinoError]);
 
-  // Fechar sugestões ao clicar fora
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (origemRef.current && !origemRef.current.contains(event.target as Node)) {
@@ -99,9 +99,37 @@ export default function Voos() {
     setDestinoSearchTerm('');
   };
 
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedOrigem || !selectedDestino || !startDate) {
+      alert('Preencha origem, destino e data de ida');
+      return;
+    }
+
+    const formData = {
+      origem: selectedOrigem.iataCode,
+      destino: selectedDestino.iataCode,
+      dataInicio: startDate.toISOString().split('T')[0],
+      dataFim: idaEVolta && endDate ? endDate.toISOString().split('T')[0] : '',
+      adultos,
+      criancas
+    };
+
+    router.push(
+      `/voos/?origem=${formData.origem}` +
+      `&destino=${formData.destino}` +
+      `&dataInicio=${formData.dataInicio}` +
+      (formData.dataFim ? `&dataFim=${formData.dataFim}` : '') +
+      `&adultos=${formData.adultos}` +
+      `&criancas=${formData.criancas}`
+    );
+  };
+
+
   return (
     <div className={`max-w-4xl mx-auto p-6 ${inter.variable} font-sans`}>
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           {/* Input de Origem com sugestões */}
           <div className='mb-2 relative' ref={origemRef}>
@@ -185,6 +213,8 @@ export default function Voos() {
               type="number"
               min={0}
               placeholder="Criança"
+              value={criancas}
+              onChange={(e) => setCriancas(parseInt(e.target.value) || 0)}
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
             />
           </div>
@@ -194,6 +224,8 @@ export default function Voos() {
               type="number"
               min={1}
               placeholder="Adulto"
+              value={adultos}
+              onChange={(e) => setAdultos(parseInt(e.target.value) || 1)}
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
             />
           </div>
@@ -217,7 +249,7 @@ export default function Voos() {
               placeholderText="Data do fim"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
               dateFormat="dd/MM/yyyy"
-              minDate={startDate}
+              minDate={startDate || undefined} 
             />
           </div>
         </div>
@@ -244,7 +276,7 @@ export default function Voos() {
           </label>
         </div>
 
-        <button className='text-white font-semibold bg-[#0871B5] w-full rounded-full p-4'>
+        <button type="submit" className='text-white font-semibold bg-[#0871B5] w-full rounded-full p-4'>
           Simular Orçamento
         </button>
       </form>
