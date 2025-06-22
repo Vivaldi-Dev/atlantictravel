@@ -25,8 +25,8 @@ export default function Voos() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [idaEVolta, setIdaEVolta] = useState(true);
-  const [adultos, setAdultos] = useState(1);
-  const [criancas, setCriancas] = useState(0);
+  const [adultos, setAdultos] = useState<string>("");
+  const [criancas, setCriancas] = useState<string>("");
 
   const [origem, setOrigem] = useState('');
   const [destino, setDestino] = useState('');
@@ -131,7 +131,6 @@ export default function Voos() {
     <div className={`max-w-4xl mx-auto p-6 ${inter.variable} font-sans`}>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-          {/* Input de Origem com sugestões */}
           <div className='mb-2 relative' ref={origemRef}>
             <input
               type="text"
@@ -169,7 +168,6 @@ export default function Voos() {
             )}
           </div>
 
-          {/* Input de Destino com sugestões */}
           <div className='mb-2 relative' ref={destinoRef}>
             <input
               type="text"
@@ -207,14 +205,13 @@ export default function Voos() {
             )}
           </div>
 
-          {/* Restante do formulário */}
           <div className='mb-2'>
             <input
               type="number"
               min={0}
               placeholder="Criança"
               value={criancas}
-              onChange={(e) => setCriancas(parseInt(e.target.value) || 0)}
+              onChange={(e) => setCriancas(e.target.value)}
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
             />
           </div>
@@ -225,7 +222,7 @@ export default function Voos() {
               min={1}
               placeholder="Adulto"
               value={adultos}
-              onChange={(e) => setAdultos(parseInt(e.target.value) || 1)}
+              onChange={(e) => setAdultos(e.target.value)}
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
             />
           </div>
@@ -249,7 +246,7 @@ export default function Voos() {
               placeholderText="Data do fim"
               className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
               dateFormat="dd/MM/yyyy"
-              minDate={startDate || undefined} 
+              minDate={startDate || undefined} // Corrigido aqui
             />
           </div>
         </div>

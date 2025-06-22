@@ -13,7 +13,7 @@ const inter = Inter({
 export default function page() {
     return (
         <div>
-            <div className={`relative w-full h-screen max-h-[500px] bg-cover bg-center bg-no-repeat bg-[url('/banner4.jpg')] ${inter.variable} font-sans`}>
+            <div className={`relative w-full h-screen max-h-[700px] bg-cover bg-center bg-no-repeat bg-[url('/banner4.jpg')] ${inter.variable} font-sans`}>
                 <div className="banner-overlay absolute left-0 w-[30%] inset-0 bg-gradient-to-r from-black/20 to-black/30 z-0" />
 
                 <div className="relative z-10 flex items-center justify-start h-full px-14">

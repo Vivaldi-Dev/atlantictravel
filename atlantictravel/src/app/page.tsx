@@ -4,7 +4,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import Loader from "./components/loader/Loader";
 
-const Header = dynamic(() => import("./components/navbar/Header"), { ssr: false });
 const Banner = dynamic(() => import("./components/banner/Banner"), { ssr: false });
 const Welcome = dynamic(() => import("./components/welcome/Welcome"), { ssr: false });
 const TripleSlider = dynamic(() => import("./components/sliders/TripleSlider"), { ssr: false });
@@ -17,13 +16,20 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); 
-    return () => clearTimeout(timer);
+    const alreadyVisited = localStorage.getItem("alreadyVisited");
+
+    if (alreadyVisited) {
+      setIsLoading(false);
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+        localStorage.setItem("alreadyVisited", "true");
+      }, 2000); 
+    }
   }, []);
 
   const renderedContent = useMemo(() => (
     <>
-      <Header />
       <Banner />
       <Welcome />
       <TripleSlider />

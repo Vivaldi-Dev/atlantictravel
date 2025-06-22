@@ -22,7 +22,7 @@ export default function Banner() {
             <div className={`relative w-full h-screen max-h-[600px] bg-cover bg-center bg-no-repeat bg-[url('/baner2.jpg')] ${inter.variable} font-sans`}>
                 <div className="absolute inset-0 bg-black/30"></div>
 
-                <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+                <div className="relative z-10 container mx-auto px-4 h-full flex items-center mt-20">
                     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
 
                         className={`max-w-2xl ${inter.variable} font-inter`}>
