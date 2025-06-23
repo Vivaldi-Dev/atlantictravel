@@ -217,7 +217,7 @@ export default function Voos() {
           </div>
 
           <div className='mb-2'>
-            <input
+            <input 
               type="number"
               min={1}
               placeholder="Adulto"
