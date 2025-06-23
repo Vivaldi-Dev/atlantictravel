@@ -12,7 +12,6 @@ const inter = Inter({
 
 export default function Activity() {
   const [startDate, setStartDate] = useState<Date | null>(null);
-  // const [endDate, setEndDate] = useState<Date | null>(null);
   const [idaEVolta, setIdaEVolta] = useState(true);
 
 
@@ -20,14 +19,7 @@ export default function Activity() {
     <div className={`max-w-4xl mx-auto p-6 ${inter.variable} font-sans`}>
       <form className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-          <div className='mb-2'>
-            <input
-              type="text"
-              placeholder="Origem"
-              className="mt-1 w-full rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0871B5] bg-[#D9D9D975]"
-            />
-          </div>
-
+          
           <div className='mb-2'>
             <input
               type="text"
