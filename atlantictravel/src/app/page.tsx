@@ -10,7 +10,6 @@ const TripleSlider = dynamic(() => import("./components/sliders/TripleSlider"), 
 const WhaySection = dynamic(() => import("./components/sectionwhy/Whay"), { ssr: false });
 const Pacotes = dynamic(() => import("./components/pacotes/Pacotes"), { ssr: false });
 const Pronto = dynamic(() => import("./components/pronto/Pronto"), { ssr: false });
-const Footer = dynamic(() => import("./components/footer/Footer"), { ssr: false });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +35,6 @@ export default function Home() {
       <WhaySection />
       <Pacotes />
       <Pronto />
-      <Footer />
     </>
   ), []);
 

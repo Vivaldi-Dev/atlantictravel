@@ -1,4 +1,8 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['api.panoramatours.co.mz'],
+  },
   async rewrites() {
     return [
       {
