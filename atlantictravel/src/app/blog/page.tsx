@@ -5,6 +5,7 @@ import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Gridcolpan from './components/grid/Gridcolpan';
 import Gridtwo from './components/grid/Gridtwo';
+import Have from './components/have/Have';
 
 
 const inter = Inter({
@@ -73,6 +74,7 @@ export default function Page() {
             </div>
             <Gridcolpan />
             <Gridtwo />
+            <Have />
         </div>
     )
 }
