@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Gridcolpan from './components/grid/Gridcolpan';
+import Gridtwo from './components/grid/Gridtwo';
+
 
 const inter = Inter({
     subsets: ['latin'],
@@ -70,6 +72,7 @@ export default function Page() {
                 </div>
             </div>
             <Gridcolpan />
+            <Gridtwo />
         </div>
     )
 }
