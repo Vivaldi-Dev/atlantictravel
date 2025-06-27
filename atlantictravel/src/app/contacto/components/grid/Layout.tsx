@@ -10,7 +10,7 @@ const inter = Inter({
     weight: ['400', '500', '600', '700'],
 })
 
-// Animations
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -31,8 +31,7 @@ export default function ContactLayout() {
         <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className='w-full py-8 bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden'
-        >
+            className='w-full py-8 bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden'>
             <div className={`container mx-auto px-4 ${inter.className}`}>
                 <motion.div 
                     variants={container}

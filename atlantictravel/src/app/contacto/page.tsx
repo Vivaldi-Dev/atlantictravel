@@ -1,6 +1,7 @@
 import React from 'react'
 import { Inter } from 'next/font/google'
 import Layout from './components/grid/Layout'
+import Form from './components/form/Form'
 
 const inter = Inter({
     subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function Page() {
                 </div>
             </div>
             <Layout />
+            <Form />
         </div>
 
     )
