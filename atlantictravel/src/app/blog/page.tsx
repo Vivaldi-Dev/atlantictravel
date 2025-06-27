@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import Gridcolpan from './components/grid/Gridcolpan';
 import Gridtwo from './components/grid/Gridtwo';
 import Have from './components/have/Have';
+import Explora from './components/explora/Explora';
+
 
 
 const inter = Inter({
@@ -75,6 +77,7 @@ export default function Page() {
             <Gridcolpan />
             <Gridtwo />
             <Have />
+            <Explora />
         </div>
     )
 }
