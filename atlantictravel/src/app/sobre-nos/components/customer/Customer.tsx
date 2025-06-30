@@ -43,7 +43,7 @@ export default function Customer() {
                 src={src}
                 alt={`Logo cliente ${index + 1}`}
                 fill
-                className='object-contain grayscale hover:grayscale-0 transition-all duration-300'
+                className='object-contain  hover:grayscale-0 transition-all duration-300'
               />
             </motion.div>
           ))}
