@@ -39,20 +39,9 @@ const fadeInVariants = {
 
 export default function Page() {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="py-40"
-    >
-      <motion.div 
-        variants={fadeInVariants}
-        className={`text-center text-sm ${inter.variable} font-sans`}
-      >
-        <motion.p 
-          variants={itemVariants}
-          className="text-center font-semibold text-4xl mb-4"
-        >
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="py-40">
+      <motion.div variants={fadeInVariants} className={`text-center text-sm ${inter.variable} font-sans`}>
+        <motion.p variants={itemVariants} className="text-center font-semibold text-4xl mb-4">
           Moçambique espera por ti!
         </motion.p>
         <motion.p variants={itemVariants}>
@@ -69,18 +58,9 @@ export default function Page() {
         </motion.p>
       </motion.div>
 
-      <motion.div 
-        variants={fadeInVariants}
-        className="container mx-auto px-4 mt-16"
-      >
-        <motion.div 
-          variants={containerVariants}
-          className="flex flex-col sm:flex-row justify-center items-end gap-4"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full sm:w-[270px] h-[220px] rounded-xl overflow-hidden shadow-lg"
-          >
+      <motion.div  variants={fadeInVariants} className="container mx-auto px-4 mt-16">
+        <motion.div variants={containerVariants} className="flex flex-col sm:flex-row justify-center items-end gap-4">
+          <motion.div variants={itemVariants} className="relative w-full sm:w-[270px] h-[220px] rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/imgblog.png"
               alt="Imagem 1"
@@ -91,10 +71,7 @@ export default function Page() {
             />
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full sm:w-[260px] h-[320px] rounded-xl overflow-hidden shadow-lg"
-          >
+          <motion.div variants={itemVariants} className="relative w-full sm:w-[260px] h-[320px] rounded-xl overflow-hidden shadow-lg" >
             <Image
               src="/imgblog1.png"
               alt="Imagem 2"
@@ -105,10 +82,7 @@ export default function Page() {
             />
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full sm:w-[300px] h-[260px] rounded-xl overflow-hidden shadow-lg"
-          >
+          <motion.div variants={itemVariants} className="relative w-full sm:w-[300px] h-[260px] rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/imgblog3.jpg"
               alt="Imagem 3"
@@ -120,14 +94,8 @@ export default function Page() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
-          variants={fadeInVariants}
-          className="flex justify-center mt-8"
-        >
-          <motion.div 
-            variants={containerVariants}
-            className="max-w-2xl text-sm"
-          >
+        <motion.div variants={fadeInVariants} className="flex justify-center mt-8">
+          <motion.div variants={containerVariants} className="max-w-2xl text-sm">
             <motion.div variants={itemVariants} className='mb-4'>
               <p className="font-semibold text-start mb-2">1. Arquipélago de Bazaruto</p>
               <p>
