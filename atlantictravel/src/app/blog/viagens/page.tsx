@@ -4,6 +4,8 @@ import React from 'react'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Ready from '../components/have/Ready'
+
 
 const inter = Inter({
     subsets: ['latin'],
@@ -39,7 +41,7 @@ const fadeInVariants = {
 
 export default function Page() {
     return (
-        <motion.div initial="hidden" animate="visible" variants={containerVariants} className="py-40">
+        <motion.div initial="hidden" animate="visible" variants={containerVariants} className="mt-40 ">
             <motion.div variants={fadeInVariants} className={`text-center text-sm ${inter.variable} font-sans`}>
                 <motion.p variants={itemVariants} className="text-center font-semibold text-4xl mb-4">
                     Como as Viagens Podem Reforçar a
@@ -60,7 +62,7 @@ export default function Page() {
                 </motion.p>
             </motion.div>
 
-            <motion.div variants={fadeInVariants} className="container mx-auto px-4 mt-16">
+            <motion.div variants={fadeInVariants} className="container mx-auto px-4 mt-16 mb-16">
                 <motion.div variants={containerVariants} className="flex flex-col sm:flex-row justify-center items-end gap-4">
 
                     <motion.div variants={itemVariants} className="relative w-full sm:w-[460px] h-[320px] rounded-xl overflow-hidden shadow-lg" >
@@ -103,21 +105,46 @@ export default function Page() {
 
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p className="font-semibold text-start mb-2">Educação Que Vai Além da Sala de Aula </p>
+                            <p className="font-semibold text-start mb-2">Formações e Seminários Fora do Escritório</p>
                             <p>
-                                Educação Que Vai Além da Sala de Aula  Se és responsável por uma escola, grupo de estudantes ou centro de formação,
-                                fala connosco.
-                                Criamos pacotes  personalizados que unem segurança, conhecimento e momentos inesquecíveis.
+                                Organizamos todo o suporte logístico para formações corporativas em locais inspiradores com foco, mas sem a rigidez  do dia-a-dia.
                             </p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p>Solicita já a proposta da tua instituiçãoco.</p>
+                            <p className="font-semibold text-start mb-2">Viagens de Incentivo</p>
+                            <p>Reconhece e premia o desempenho com viagens personalizadas que servem como combustível emocional e valorização  do esforço coletivo.</p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className='mb-4'>
+                            <p className="font-semibold text-start mb-2">Benefícios Reais para Empresas</p>
+                            <p>Reforço dos valores institucionais;</p>
+                            <p>Alinhamento entre departamentos e equipas;</p>
+                            <p>Criação de memórias partilhadas que fortalecem vínculos;</p>
+                            <p>Identificação de novos líderes e talentos internos;</p>
+                            <p>Estímulo à criatividade e inovação fora do ambiente convencional.</p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className='mb-4'>
+                            <p className="font-semibold text-start mb-2">O Que Fazemos na Atlantic Travel</p>
+                            <p>Cuidamos de tudo, literalmente:</p>
+                            <p>Transporte (aéreo, terrestre ou fretamento)</p>
+                            <p>Reservas e hospedagem personalizadas</p>
+                            <p>Locais adaptados ao perfil da organização</p>
+                            <p>Atividades dinâmicas e culturais</p>
+                            <p>Suporte em tempo real com consultores dedicados</p>
+                            <p>Kit de boas-vindas e material de apoio (quando necessário)</p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className='mb-4'>
+                            <p className="font-semibold text-start mb-2">Vamos Fortalecer a Cultura da Tua Empresa?</p>
+                            <p>Quer seja uma PME, uma multinacional ou uma ONG, a Atlantic Travel tem as condições ideais para te ajudar a criar  viagens que impactam pessoas e constroem equipas mais fortes.</p>
                         </motion.div>
 
                     </motion.div>
                 </motion.div>
             </motion.div>
+            <Ready />
         </motion.div>
     )
 }
