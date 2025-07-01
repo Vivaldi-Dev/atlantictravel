@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
+
 export default function Explora() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
