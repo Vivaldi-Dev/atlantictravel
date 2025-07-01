@@ -79,39 +79,50 @@ export default function Page() {
                         <motion.div variants={itemVariants} className='mb-4'>
                             <p className="font-semibold text-start mb-2">Mais Segurança e Menos Risco</p>
                             <p>
-                                Uma agência experiente garante que toda a viagem esteja protegida contra imprevistos:   Apoio em tempo real em caso de cancelamentos, atrasos ou mudanças de plano;  Acompanhamento especializado em caso de extravio de bagagem ou problemas com reservas;  Assistência na escolha de seguros adequados ao perfil do viajante.
+                                Uma agência experiente garante que toda a viagem esteja protegida contra imprevistos:
+                                Apoio em tempo real em caso de cancelamentos, atrasos ou mudanças de plano;
+                                Acompanhamento especializado em caso de extravio de bagagem ou problemas com reservas;
+                                Assistência na escolha de seguros adequados ao perfil do viajante.
 
                             </p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p className="font-semibold text-start mb-2">Seguro de Viagem é Essencial </p>
-                            <p>Não arrisques. Um bom seguro de viagem cobre despesas médicas, extravio de bagagem, cancelamentos, acidentes e  outras eventualidades.</p>
-                            <p className='mt-2'>A Atlantic Travel oferece planos de seguro personalizados de acordo com o destino e o tipo de viagem.</p>
+                            <p className="font-semibold text-start mb-2">Economia de Tempo e Recursos</p>
+                            <p>Procurar, comparar, confirmar, validar… organizar uma viagem exige horas e até dias de pesquisa. Nós simplificamos  tudo:  
+                                Acesso direto aos melhores sistemas de reserva (Amadeus, Galileo, Sabre);  
+                                Negociação de tarifas exclusivas com hotéis e companhias aéreas; 
+                                Roteiros prontos, personalizados e otimizados.</p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p className="font-semibold text-start mb-2">Organiza Bem a Tua Bagagem</p>
-                            <p>
-                                Faça uma lista com antecedência: Roupa adequada ao clima do destino Adaptadores de tomada e carregadores  Produtos de higiene pessoal em quantidades permitidas  Cópias digitais e impressas dos teus documentos
-                                Menos é mais: evita levar demasiadas malas e escolhe peças versáteis.
+                            <p className="font-semibold text-start mb-2">Personalização com Conhecimento Profundo</p>
+                            <p>Agências de viagens não vendem apenas bilhetes, vendem experiência e orientação. Na
+                                Atlantic Travel, conhecemos os  destinos,
+                                as melhores épocas para viajar e os detalhes que fazem a diferença.
+                                Oferecemos: Sugestões baseadas no teu perfil (família, casal, estudo, negócios),
+                                Roteiros alternativos fora dos circuitos tradicionais, Aconselhamento sobre costumes, cultura e documentação.</p>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className='mb-4'>
+                            <p className="font-semibold text-start mb-2">Benefícios e Vantagens Exclusivas</p>
+                            <p> Ao viajares com a Atlantic Travel, podes aceder a:Condições especiais para grupos,
+                                escolas e empresas Fretamento de viaturas ou aeronaves para eventos ou missões empresariais Apoio total para viagens académicas e de incentivo Pagamento faseado em alguns serviçoss.
                             </p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p className="font-semibold text-start mb-2">Informa-te Sobre o Destino</p>
-                            <p>
-                                Pesquise sobre:  Cultura e costumes locais, Idioma, Meios de transporte, Locais turísticos e zonas a evitar, Redes de apoio, como consulados ou embaixadas
-                            </p>
+                            <p className="font-semibold text-start mb-2">Apoio Humano Antes, Durante e Depois da Viagem</p>
+                            <p>Ao viajares com a Atlantic Travel, podes aceder a: Condições especiais para grupos, escolas e empresas,
+                                Fretamento de viaturas ou aeronaves para eventos ou missões empresariais
+                                Apoio total para viagens académicas e de incentivo e Pagamento faseado em alguns serviços.</p>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className='mb-4'>
-                            <p className="font-semibold text-start mb-2">Viaja com Apoio de Profissionais </p>
-                            <p>Contar com uma agência experiente é a chave para evitar imprevistos. Com a Atlantic Travel, tens acesso a: Consultores dedicados do início ao fim da tua viagem,Reservas confiáveis e seguras, Apoio no planejamento, emissão de documentos, bilhetes e seguros.</p>
-                        </motion.div>
 
                         <motion.div variants={itemVariants} className='mb-4'>
-                            <p>A Tua Primeira Viagem Deve Ser Memorável, Não Estressante  Pronto para embarcar? Fala já connosco.</p>
+                            <p className="font-semibold text-start mb-2">A Diferença Está no Detalhe </p>
+                            <p>Viajar por conta própria pode parecer libertador, mas viajar com uma agência profissional é inteligente. E no fim, é isso  que garante uma viagem realmente memorável</p>
+                            <p className='mt-2'>Queres fazer a tua próxima viagem conosco?</p>
                         </motion.div>
 
                     </motion.div>
