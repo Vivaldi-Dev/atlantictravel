@@ -53,15 +53,14 @@ export default function WhySection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className='bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden py-12'
-        >
+            className='bg-gradient-to-b from-[#B2DEE1] to-[#fff] relative overflow-hidden py-12'>
             <div className='container mx-auto px-4'>
+
                 <motion.div
                     initial={{ y: -20, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : {}}
                     transition={{ delay: 0.2 }}
-                    className={`text-center mb-12 ${playfair.variable} font-playfair`}
-                >
+                    className={`text-center mb-12 ${playfair.variable} font-playfair`}>
                     <p className="text-3xl md:text-5xl italic font-bold text-[#000]">Porquê escolher a</p>
                     <p className="text-3xl md:text-4xl italic text-[#000]">Atlantic Travel?</p>
                 </motion.div>
@@ -74,8 +73,7 @@ export default function WhySection() {
                                 initial={{ x: -50, opacity: 0 }}
                                 animate={isInView ? { x: 0, opacity: 1 } : {}}
                                 transition={{ delay: 0.4 + index * 0.1 }}
-                                className='flex items-center gap-2 border border-[#0871B5] p-4 rounded-full'
-                            >
+                                className='flex items-center gap-2 border border-[#0871B5] p-4 rounded-full'>
                                 <Image
                                     src={item.icon}
                                     alt={item.title}
@@ -103,8 +101,7 @@ export default function WhySection() {
                                 alt="Viagem Atlantic"
                                 fill
                                 className='object-cover rounded-lg'
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                            />
+                                sizes="(max-width: 768px) 100vw, 50vw"/>
                         </div>
                     </motion.div>
 
@@ -115,8 +112,7 @@ export default function WhySection() {
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={isInView ? { x: 0, opacity: 1 } : {}}
                                 transition={{ delay: 0.4 + index * 0.1 }}
-                                className='flex items-center gap-2 border border-[#0871B5] p-2 rounded-full'
-                            >
+                                className='flex items-center gap-2 border border-[#0871B5] p-2 rounded-full'>
                                 <Image
                                     src={item.icon}
                                     alt={item.title}

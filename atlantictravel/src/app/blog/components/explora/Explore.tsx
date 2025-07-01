@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 
-export default function Explora() {
+export default function Explore() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
 
@@ -24,14 +24,13 @@ export default function Explora() {
     }
 
     return (
-        <div className='p-8'>
+        <div className='py-16 bg-gradient-to-b from-[#B2DEE1] to-[#fff]'>
             <div className='container mx-auto px-4'>
                 <motion.p
                     className='text-center text-3xl'
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
+                    transition={{ duration: 0.6 }}>
                     Explora o <span className='bg-[#F9D423] p-1 text-black'>nosso conteúdo</span>
                 </motion.p>
 
@@ -41,8 +40,7 @@ export default function Explora() {
                         variants={containerVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
-                        className='grid grid-cols-1 sm:grid-cols-3 gap-20'
-                    >
+                        className='grid grid-cols-1 sm:grid-cols-3 gap-20'>
                         {[
                             {
                                 text: 'Ver últimos artigos',
@@ -60,8 +58,7 @@ export default function Explora() {
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className='flex items-center gap-4 justify-center text-center'
-                            >
+                                className='flex items-center gap-4 justify-center text-center'>
                                 <p className="text-sm sm:text-base">{item.text}</p>
                                 <Image src={item.icon} alt="icon" width={20} height={20} />
                             </motion.div>

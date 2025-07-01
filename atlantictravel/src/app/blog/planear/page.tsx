@@ -4,6 +4,10 @@ import React from 'react'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Ready from '../components/have/Ready'
+import Explore from '../components/explora/Explore'
+
+
 
 const inter = Inter({
     subsets: ['latin'],
@@ -39,7 +43,7 @@ const fadeInVariants = {
 
 export default function Page() {
     return (
-        <motion.div initial="hidden" animate="visible" variants={containerVariants} className="py-40">
+        <motion.div initial="hidden" animate="visible" variants={containerVariants} className="mt-40">
             <motion.div variants={fadeInVariants} className={`text-center text-sm ${inter.variable} font-sans`}>
                 <motion.p variants={itemVariants} className="text-center font-semibold text-4xl mb-4">Como Planear a Tua Primeira Viagem <br />
                     Internacional com Segurança
@@ -55,7 +59,7 @@ export default function Page() {
 
             </motion.div>
 
-            <motion.div variants={fadeInVariants} className="container mx-auto px-4 mt-16">
+            <motion.div variants={fadeInVariants} className="container mx-auto px-4 mt-16 mb-16">
                 <motion.div variants={containerVariants} className="relative flex flex-col sm:flex-row justify-center items-end gap-4">
                     <motion.div variants={itemVariants} className="relative w-full sm:w-[460px] h-[320px] rounded-xl overflow-hidden shadow-lg" >
                         <Image
@@ -135,6 +139,8 @@ export default function Page() {
                     </motion.div>
                 </motion.div>
             </motion.div>
+            <Ready />
+            <Explore />
         </motion.div>
     )
 }
