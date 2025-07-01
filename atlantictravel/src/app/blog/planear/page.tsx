@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Ready from '../components/have/Ready'
+import Explore from '../components/explora/Explore'
+
 
 
 const inter = Inter({
@@ -138,6 +140,7 @@ export default function Page() {
                 </motion.div>
             </motion.div>
             <Ready />
+            <Explore />
         </motion.div>
     )
 }
