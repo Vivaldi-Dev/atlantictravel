@@ -35,7 +35,7 @@ export default function Banner() {
                         </h1>
 
                         <h2 className='text-[#FFF700] text-3xl md:text-5xl lg:text-6xl  font-bold leading-tight '>
-                            Lda Viagens & Turismo
+                            Lda. Viagens & Turismo
                         </h2>
 
                         <p className='text-white text-3xl md:text-5xl lg:text-6xl md:text-nowrap font-bold mb-4'>
