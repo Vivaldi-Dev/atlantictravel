@@ -74,7 +74,7 @@ const Page = () => {
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-bold text-gray-800">{car.model}</h3>
                   <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                    {car.category || 'Van'}
+                    {/* {car.category || 'Van'} */}
                   </span>
                 </div>
 
