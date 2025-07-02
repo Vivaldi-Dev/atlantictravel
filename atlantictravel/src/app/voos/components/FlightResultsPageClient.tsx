@@ -8,6 +8,7 @@ import Flycard from '../Flycard';
 
 
 export default function FlightResultsPageClient() {
+  
   const searchParams = useSearchParams();
   const { search, results, loading: flightLoading } = useFlightSearch();
   const [initialLoad, setInitialLoad] = useState(true);
