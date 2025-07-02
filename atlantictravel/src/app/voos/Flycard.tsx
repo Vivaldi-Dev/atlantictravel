@@ -129,6 +129,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
     });
   };
 
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
@@ -181,12 +182,10 @@ export default function Flycard({ flights = [], loading = false, error = null }:
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center relative">
 
             <div>
-
               <div className="text-sm border p-2 border-gray-400 rounded">
                 <span className="block text-gray-400">From</span>
                 <span className="font-medium text-gray-800">JNB - Johannesburg</span>
               </div>
-
             </div>
             
 
@@ -314,8 +313,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   <select
                     value={filters.sortBy}
                     onChange={handleSortChange}
-                    className="w-full p-2 border border-gray-300 rounded-md"
-                  >
+                    className="w-full p-2 border border-gray-300 rounded-md">
                     <option value="price">Menor preço</option>
                     <option value="duration">Menor duração</option>
                     <option value="departure">Horário de partida</option>
