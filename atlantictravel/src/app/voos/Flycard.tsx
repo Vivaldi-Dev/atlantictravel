@@ -56,7 +56,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
     if (filters.airlines.length > 0 && !filters.airlines.includes(flight.airline)) {
       return false;
     }
-    
+
     if (filters.maxPrice) {
       const flightPrice = parseFloat(flight.price.replace('R$', '').replace('.', '').replace(',', '.'));
       const maxPrice = parseFloat(filters.maxPrice);
@@ -64,11 +64,11 @@ export default function Flycard({ flights = [], loading = false, error = null }:
         return false;
       }
     }
-    
+
     if (filters.stops !== null && flight.stops !== filters.stops) {
       return false;
     }
-    
+
     return true;
   });
 
@@ -145,6 +145,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
   if (error) {
     return (
       <div className={`max-w-5xl mx-auto px-4 py-10 ${inter.variable}`}>
+
         <div className="bg-red-50 border-l-4 border-red-500 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -164,20 +165,72 @@ export default function Flycard({ flights = [], loading = false, error = null }:
   }
 
   return (
-    <div className={`max-w-7xl mx-auto px-4 sm:px-6 py-8 ${inter.variable} font-sans`}>
+    <div className={`max-w-7xl mx-auto px-4 sm:px-6 py-30 ${inter.variable} font-sans`}>
+      <div className='mt-5 mb-5 '>
+        <div className="bg-[#e6e1dc] flex justify-center py-10 px-4">
+          
+          <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl p-6 ">
+            <div className="text-gray-700 font-semibold text-lg">
+              Johannesburg to Maputo
+            </div>
+
+            <div className="flex space-x-3">
+              <span className="bg-blue-600 text-white px-4 py-1 rounded-md text-sm font-medium">
+                Round Trip
+              </span>
+             
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+              <div className="text-sm">
+                <span className="block text-gray-400">From</span>
+                <span className="font-medium text-gray-800">JNB - Johannesburg</span>
+              </div>
+
+              <div className="text-sm">
+                <span className="block text-gray-400">To</span>
+                <span className="font-medium text-gray-800">MPM - Maputo</span>
+              </div>
+
+              <div className="text-sm">
+                <span className="block text-gray-400">Departure</span>
+                <span className="font-medium text-gray-800">15 Jul 2025</span>
+              </div>
+
+              <div className="text-sm">
+                <span className="block text-gray-400">Arrival</span>
+                <span className="font-medium text-gray-800">16 Jul 2025</span>
+              </div>
+
+              <div className="text-sm">
+                <span className="block text-gray-400">Passengers and Class</span>
+                <span className="font-medium text-gray-800">1 Traveller, Economy</span>
+              </div>
+            </div>
+
+            <div className="flex justify-end mt-4">
+              <button className="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition text-sm">
+                Edit Search
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
       <div className="flex flex-col md:flex-row gap-6">
         <div className={`md:w-64 flex-shrink-0 ${showFilters ? 'block' : 'hidden'} md:block`}>
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sticky top-4">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold text-lg">Filtros</h2>
-              <button 
-                onClick={() => setShowFilters(false)} 
+              <button
+                onClick={() => setShowFilters(false)}
                 className="md:hidden text-gray-500 hover:text-gray-700"
               >
                 <X size={20} />
               </button>
             </div>
-            
+
             <div className="space-y-6">
               <div>
                 <h3 className="font-medium mb-2">Preço máximo</h3>
@@ -185,11 +238,11 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   type="number"
                   placeholder="R$"
                   value={filters.maxPrice}
-                  onChange={(e) => setFilters({...filters, maxPrice: e.target.value})}
+                  onChange={(e) => setFilters({ ...filters, maxPrice: e.target.value })}
                   className="w-full p-2 border border-gray-300 rounded-md"
                 />
               </div>
-              
+
               <div>
                 <h3 className="font-medium mb-2">Companhias aéreas</h3>
                 <div className="space-y-2">
@@ -209,7 +262,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="font-medium mb-2">Escalas</h3>
                 <div className="space-y-2">
@@ -219,7 +272,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       id="stops-any"
                       name="stops"
                       checked={filters.stops === null}
-                      onChange={() => setFilters({...filters, stops: null})}
+                      onChange={() => setFilters({ ...filters, stops: null })}
                       className="h-4 w-4 text-blue-600"
                     />
                     <label htmlFor="stops-any" className="ml-2 text-sm">
@@ -232,7 +285,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       id="stops-0"
                       name="stops"
                       checked={filters.stops === 0}
-                      onChange={() => setFilters({...filters, stops: 0})}
+                      onChange={() => setFilters({ ...filters, stops: 0 })}
                       className="h-4 w-4 text-blue-600"
                     />
                     <label htmlFor="stops-0" className="ml-2 text-sm">
@@ -245,7 +298,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       id="stops-1"
                       name="stops"
                       checked={filters.stops === 1}
-                      onChange={() => setFilters({...filters, stops: 1})}
+                      onChange={() => setFilters({ ...filters, stops: 1 })}
                       className="h-4 w-4 text-blue-600"
                     />
                     <label htmlFor="stops-1" className="ml-2 text-sm">
@@ -254,7 +307,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="font-medium mb-2">Ordenar por</h3>
                 <select
@@ -267,7 +320,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   <option value="departure">Horário de partida</option>
                 </select>
               </div>
-              
+
               <button
                 onClick={resetFilters}
                 className="w-full py-2 px-4 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50"
@@ -277,7 +330,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
             </div>
           </div>
         </div>
-        
+
         <div className="flex-1">
           <div className="mb-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -290,22 +343,20 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   )}
                 </p>
               </div>
-              
+
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowFilters(!showFilters)}
-                  className="md:hidden flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50"
-                >
+                  className="md:hidden flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
                   <Sliders size={16} />
                   <span>Filtros</span>
                 </button>
-                
+
                 <div className="relative">
                   <select
                     value={filters.sortBy}
                     onChange={handleSortChange}
-                    className="appearance-none pl-3 pr-8 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50"
-                  >
+                    className="appearance-none pl-3 pr-8 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
                     <option value="price">Menor preço</option>
                     <option value="duration">Menor duração</option>
                     <option value="departure">Horário de partida</option>
@@ -316,52 +367,47 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                 </div>
               </div>
             </div>
-            
+
             {(filters.airlines.length > 0 || filters.maxPrice || filters.stops !== null) && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {filters.airlines.map(airline => (
-                  <span 
-                    key={airline} 
-                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-                  >
+                  <span
+                    key={airline}
+                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                     {airline}
-                    <button 
+                    <button
                       onClick={() => toggleAirline(airline)}
-                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:bg-blue-200 hover:text-blue-500"
-                    >
+                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:bg-blue-200 hover:text-blue-500">
                       <X size={12} />
                     </button>
                   </span>
                 ))}
-                
+
                 {filters.maxPrice && (
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                     Até R$ {filters.maxPrice}
-                    <button 
-                      onClick={() => setFilters({...filters, maxPrice: ''})}
-                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-green-400 hover:bg-green-200 hover:text-green-500"
-                    >
+                    <button
+                      onClick={() => setFilters({ ...filters, maxPrice: '' })}
+                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-green-400 hover:bg-green-200 hover:text-green-500">
                       <X size={12} />
                     </button>
                   </span>
                 )}
-                
+
                 {filters.stops !== null && (
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
                     {filters.stops === 0 ? 'Voos diretos' : `${filters.stops} escala${filters.stops > 1 ? 's' : ''}`}
-                    <button 
-                      onClick={() => setFilters({...filters, stops: null})}
-                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-purple-400 hover:bg-purple-200 hover:text-purple-500"
-                    >
+                    <button
+                      onClick={() => setFilters({ ...filters, stops: null })}
+                      className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-purple-400 hover:bg-purple-200 hover:text-purple-500">
                       <X size={12} />
                     </button>
                   </span>
                 )}
-                
-                <button 
+
+                <button
                   onClick={resetFilters}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
-                >
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200">
                   Limpar todos
                 </button>
               </div>
@@ -402,9 +448,8 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                               <h3 className="font-semibold text-gray-900">
                                 {flight.airline}
                               </h3>
-                              <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${
-                                flight.stops === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                              }`}>
+                              <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${flight.stops === 0 ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                                }`}>
                                 {flight.stops === 0 ? 'Voo Direto' : `${flight.stops} escala${flight.stops > 1 ? 's' : ''}`}
                               </span>
                             </div>
@@ -444,7 +489,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                               <Briefcase size={14} className="text-gray-400" />
                               <span>1 Bagagem</span>
                             </div>
-                            <div className="text-3xl font-bold text-blue-600">{flight.price}</div>
+                            <div className="text-xl font-bold text-blue-600">{flight.price}</div>
                           </div>
                           <button className="mt-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all">
                             Selecionar
@@ -461,9 +506,8 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-md ${
-                      currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
-                    }`}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-md ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
+                      }`}
                   >
                     <ChevronLeft size={16} />
                     <span>Anterior</span>
@@ -474,11 +518,10 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       <button
                         key={page}
                         onClick={() => handlePageChange(page)}
-                        className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                          currentPage === page
-                            ? 'bg-blue-600 text-white'
-                            : 'text-gray-700 hover:bg-gray-100'
-                        }`}
+                        className={`w-10 h-10 rounded-full flex items-center justify-center ${currentPage === page
+                          ? 'bg-blue-600 text-white'
+                          : 'text-gray-700 hover:bg-gray-100'
+                          }`}
                       >
                         {page}
                       </button>
@@ -488,9 +531,8 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-md ${
-                      currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
-                    }`}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-md ${currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
+                      }`}
                   >
                     <span>Próxima</span>
                     <ChevronRight size={16} />
