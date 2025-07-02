@@ -19,7 +19,6 @@
   }
 }
 
-
 input[type="date"]:not(:focus):valid + span {
   display: none;
 }
