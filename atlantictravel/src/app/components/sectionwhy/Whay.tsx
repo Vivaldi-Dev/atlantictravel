@@ -103,6 +103,7 @@ export default function WhySection() {
                                 className='object-cover rounded-lg'
                                 sizes="(max-width: 768px) 100vw, 50vw"/>
                         </div>
+                        
                     </motion.div>
 
                     <div className='space-y-4'>
@@ -112,7 +113,7 @@ export default function WhySection() {
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={isInView ? { x: 0, opacity: 1 } : {}}
                                 transition={{ delay: 0.4 + index * 0.1 }}
-                                className='flex items-center gap-2 border border-[#0871B5] p-2 rounded-full'>
+                                className='flex items-center gap-2 border border-[#0871B5] p-4 rounded-full'>
                                 <Image
                                     src={item.icon}
                                     alt={item.title}
@@ -126,6 +127,7 @@ export default function WhySection() {
                             </motion.div>
                         ))}
                     </div>
+
                 </div>
             </div>
         </motion.div>
