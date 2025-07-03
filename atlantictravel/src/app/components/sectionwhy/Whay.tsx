@@ -121,8 +121,7 @@ export default function WhySection() {
                                     className=''
                                 />
                                 <div>
-                                    <p className='text-sm'>{item.description.split(' ').slice(0, 7).join(' ')}</p>
-                                    <p className='text-sm'>{item.description.split(' ').slice(7).join(' ')}</p>
+                                    <p className='text-sm'>{item.description}</p>
                                 </div>
                             </motion.div>
                         ))}
