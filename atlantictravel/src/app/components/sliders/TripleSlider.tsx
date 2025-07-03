@@ -34,7 +34,7 @@ const categoryData: Record<CategoryKey, Category> = {
     icon: '/icons/Island.png'
   },
   vip: {
-    title: 'Serviço VIP a bordo',
+    title: 'Seguros de viagem e assistência em vistos',
     slides: [
       { title: 'Translado Executivo', image: '/vip1.jpg', id: 'vip1' },
       { title: 'Assistência Personalizada', image: '/vip2.jpg', id: 'vip2' },
@@ -44,7 +44,7 @@ const categoryData: Record<CategoryKey, Category> = {
     icon: '/icons/seguro.png'
   },
   experiencias: {
-    title: 'Experiências completas',
+    title: 'Reserva de Hotéis & Transfers',
     slides: [
       { title: 'Safári Fotográfico', image: '/exp1.jpg', id: 'exp1' },
       { title: 'Mergulho com Golfinhos', image: '/exp2.jpg', id: 'exp2' },
@@ -54,7 +54,7 @@ const categoryData: Record<CategoryKey, Category> = {
     icon: '/icons/car.png'
   },
   destinos: {
-    title: 'Destinos exclusivos',
+    title: 'Consultoria dedicada',
     slides: [
       { title: 'Ilha de Benguerra', image: '/dest1.jpg', id: 'dest1' },
       { title: 'Arquipélago de Bazaruto', image: '/dest2.jpg', id: 'dest2' },
@@ -107,7 +107,7 @@ export default function PerfectCoverflowSlider() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left">
-            <h2 className="text-3xl font-bold text-[#0871B5]">Serviços em Destaque da Atlantic Travel</h2>
+            <h2 className="text-3xl font-bold text-[#0871B5]">Serviços em Destaque</h2>
             <motion.div className="mt-6 space-y-4">
               {menuItems.map((item, index) => (
                 <motion.div

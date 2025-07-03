@@ -57,7 +57,8 @@ export default function page() {
                                 <p className="text-gray-800 text-sm">1 Traveller, Economy</p>
                             </div>
                         </div>
-                    </div>
+                    </div> 
+                    
                 </div>
             </div>
         </div>

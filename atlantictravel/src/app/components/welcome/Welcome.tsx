@@ -32,16 +32,14 @@ export default function Welcome() {
           Bem-vindo à Atlantic<br />Travel, Lda.
         </motion.h1>
 
-        {/* Texto descritivo */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
-          className="welcome-description mt-8 text-base sm:text-lg text-gray-700 space-y-2"
-        >
+          className="welcome-description mt-8 text-base sm:text-[16px] text-gray-700 ">
           <p>Com mais de 15 anos transformando sonhos em experiências memoráveis.</p>
           <p>Ajudamos milhares de viajantes a descobrir destinos, viver culturas e</p>
-          <p>colecionar histórias, dentro e fora de Moçambique</p>
+          <p>colecionar histórias, dentro e fora de Moçambique.</p>
         </motion.div>
       </div>
 
@@ -49,20 +47,20 @@ export default function Welcome() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              title: "Orgulhamo-nos de ser",
+              title: "Como membros da IATA e da AVITUM,",
               content: [
-                "membros da IATA e da AVITUM,",
-                "reforçando o nosso compromisso com padrões internacionais",
-                "de qualidade"
+                "",
+                "reforçamos o nosso compromisso com padrões internacionais de qualidade.",
+                ""
               ]
             },
             {
               title: "Ao longo da nossa história, conquistamos a confiança de milhares de viajantes",
               content: [
-                "reconhecimento de instituições de",
+                "e reconhecimento de instituições de",
                 "referência. Garantimos profissionalismo,",
                 "segurança e excelência em cada passo da",
-                "tua jornada."
+                "sua jornada."
               ]
             },
             {
@@ -70,9 +68,9 @@ export default function Welcome() {
               content: [
                 "dos destinos mais próximos",
                 "às aventuras internacionais, temos",
-                "soluções à tua medida. Do primeiro",
+                "soluções à sua medida. Do primeiro",
                 "contacto ao pós-viagem, estamos",
-                "sempre ao teu lado"
+                "sempre ao seu lado."
               ]
             }
           ].map((card, index) => (
@@ -81,10 +79,9 @@ export default function Welcome() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 + index * 0.2 }}
-              className="welcome-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            >
-              <h3 className="card-title font-bold text-gray-800 mb-3">{card.title}</h3>
-              <div className="card-content text-gray-600 space-y-2">
+              className="welcome-card bg-white p-6 rounded-lg  hover:shadow-lg transition-shadow">
+              <h3 className="card-title font-bold text-gray-800 ">{card.title}</h3>
+              <div className="card-content text-gray-600 ">
                 {card.content.map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
