@@ -40,7 +40,7 @@ export default function Activity() {
     });
 
     setLoading(false);  
-    router.push("/resumo");  
+    router.push("/activities");  
   };
 
   return (
