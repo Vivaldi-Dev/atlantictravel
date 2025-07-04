@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Inter } from 'next/font/google'
+import { useRouter } from "next/navigation";
+import { useRent } from '@/context/RentContext' 
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,29 +13,37 @@ const inter = Inter({
 })
 
 export default function RentCar() {
+  const router = useRouter();
+  const { setRentData } = useRent();  
+
   const [pickupDate, setPickupDate] = useState<Date | null>(null)
   const [returnDate, setReturnDate] = useState<Date | null>(null)
-
   const [levantamento, setLevantamento] = useState('');
   const [devolucao, setDevolucao] = useState('');
-
   const [passageiros, setPassageiros] = useState(0)
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    const FormData = {
+    const formData = {
       levantamento,
       devolucao,
-      passageiros,
-      pickupDate,
-      returnDate
+      passageiros: String(passageiros), 
+      pickupDate: pickupDate ? pickupDate.toISOString() : '',
+      returnDate: returnDate ? returnDate.toISOString() : '',
     };
 
-    console.log('Dados do formulário:', FormData);
+    setRentData(formData);
 
-  }
+    console.log('Dados do formulário:', formData);
 
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setLoading(false);
+
+    router.push("/rentcar");
+  };
 
   return (
     <div className={`max-w-4xl mx-auto p-6 ${inter.variable} font-sans`}>
@@ -94,8 +104,12 @@ export default function RentCar() {
           </div>
         </div>
 
-        <button type='submit' className='text-white font-semibold bg-[#0871B5] w-full rounded-full p-4 mt-4'>
-          Simular Orçamento
+        <button
+          type='submit'
+          disabled={loading}
+          className={`text-white font-semibold bg-[#0871B5] w-full rounded-full p-4 mt-4 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        >
+          {loading ? 'Simulando...' : 'Simular Orçamento'}
         </button>
       </form>
     </div>
