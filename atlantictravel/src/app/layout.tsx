@@ -4,7 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/navbar/Header";
 import Footer from "./components/footer/Footer";
-import { TripProvider } from "@/context/TripContext";  // ajuste o caminho conforme necessário
+import { TripProvider } from "@/context/TripContext";
+import { RentProvider } from "@/context/RentContext";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
-        <TripProvider> 
-          <Header />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
+        <TripProvider>
+          <RentProvider>
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </RentProvider>
         </TripProvider>
       </body>
     </html>
