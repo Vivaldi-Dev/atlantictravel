@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Inter } from "next/font/google";
-import { useRouter } from "next/navigation";  // para redirecionar
-import { useTrip } from "@/context/TripContext";  // importa o contexto
+import { useRouter } from "next/navigation";  
+import { useTrip } from "@/context/TripContext";
 
 const inter = Inter({
   subsets: ["latin"],
