@@ -14,14 +14,37 @@ export default function RentCar() {
   const [pickupDate, setPickupDate] = useState<Date | null>(null)
   const [returnDate, setReturnDate] = useState<Date | null>(null)
 
+  const [levantamento, setLevantamento] = useState('');
+  const [devolucao, setDevolucao] = useState('');
+
+  const [passageiros, setPassageiros] = useState(0)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const FormData = {
+      levantamento,
+      devolucao,
+      passageiros,
+      pickupDate,
+      returnDate
+    };
+
+    console.log('Dados do formulário:', FormData);
+
+  }
+
+
   return (
     <div className={`max-w-4xl mx-auto p-6 ${inter.variable} font-sans`}>
-      <form className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           <div className='mb-2'>
             <input
               type="text"
               placeholder="Local de levantamento"
+              value={levantamento}
+              onChange={e => setLevantamento(e.target.value)}
               className="mt-1 w-full rounded px-3 py-2 bg-[#D9D9D975] focus:outline-none focus:ring-2 focus:ring-[#0871B5]"
             />
           </div>
@@ -30,6 +53,8 @@ export default function RentCar() {
             <input
               type="text"
               placeholder="Local de devolução"
+              value={devolucao}
+              onChange={e => setDevolucao(e.target.value)}
               className="mt-1 w-full rounded px-3 py-2 bg-[#D9D9D975] focus:outline-none focus:ring-2 focus:ring-[#0871B5]"
             />
           </div>
@@ -39,6 +64,8 @@ export default function RentCar() {
               type="number"
               min={1}
               placeholder="Número de passageiros"
+              value={passageiros}
+              onChange={e => setPassageiros(Number(e.target.value))}
               className="mt-1 w-full rounded px-3 py-2 bg-[#D9D9D975] focus:outline-none focus:ring-2 focus:ring-[#0871B5]"
             />
           </div>
@@ -67,7 +94,7 @@ export default function RentCar() {
           </div>
         </div>
 
-        <button className='text-white font-semibold bg-[#0871B5] w-full rounded-full p-4 mt-4'>
+        <button type='submit' className='text-white font-semibold bg-[#0871B5] w-full rounded-full p-4 mt-4'>
           Simular Orçamento
         </button>
       </form>

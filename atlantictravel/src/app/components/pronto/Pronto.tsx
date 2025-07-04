@@ -25,7 +25,7 @@ export default function Pronto() {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
             className="text-2xl md:text-3xl italic font-bold mb-4">
-            Pronto para a tua próxima aventura?
+            Pronto para a sua próxima aventura?
           </motion.p>
           
           <motion.p
@@ -34,7 +34,7 @@ export default function Pronto() {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
             className='text-base md:text-lg italic mb-8 max-w-2xl mx-auto'>
-            Simula agora o teu orçamento online ou fala com um dos nossos consultores.
+            Simula agora o seu orçamento ou fala com um dos nossos consultores.
           </motion.p>
           
           <motion.div

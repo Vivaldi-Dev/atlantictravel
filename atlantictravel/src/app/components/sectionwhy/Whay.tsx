@@ -28,7 +28,7 @@ export default function WhySection() {
         {
             icon: '/icons/Coins.png',
             title: 'Flexibilidade',
-            description: 'Pagamentos ajustados à tua realidade'
+            description: 'Pagamentos ajustados à sua realidade'
         },
         {
             icon: '/icons/headefone.png',
@@ -82,7 +82,7 @@ export default function WhySection() {
                                     className=''
                                 />
                                 <div>
-                                    <p className='text-sm'>{item.description.split(' ').slice(0, 7).join(' ')}</p>
+                                    <p className='text-sm'>{item.description}</p>
                                     <p className='text-sm'>{item.description.split(' ').slice(7).join(' ')}</p>
                                 </div>
                             </motion.div>
@@ -103,6 +103,7 @@ export default function WhySection() {
                                 className='object-cover rounded-lg'
                                 sizes="(max-width: 768px) 100vw, 50vw"/>
                         </div>
+                        
                     </motion.div>
 
                     <div className='space-y-4'>
@@ -112,7 +113,7 @@ export default function WhySection() {
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={isInView ? { x: 0, opacity: 1 } : {}}
                                 transition={{ delay: 0.4 + index * 0.1 }}
-                                className='flex items-center gap-2 border border-[#0871B5] p-2 rounded-full'>
+                                className='flex items-center gap-2 border border-[#0871B5] p-4 rounded-full'>
                                 <Image
                                     src={item.icon}
                                     alt={item.title}
@@ -121,12 +122,12 @@ export default function WhySection() {
                                     className=''
                                 />
                                 <div>
-                                    <p className='text-sm'>{item.description.split(' ').slice(0, 7).join(' ')}</p>
-                                    <p className='text-sm'>{item.description.split(' ').slice(7).join(' ')}</p>
+                                    <p className='text-sm'>{item.description}</p>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
+
                 </div>
             </div>
         </motion.div>

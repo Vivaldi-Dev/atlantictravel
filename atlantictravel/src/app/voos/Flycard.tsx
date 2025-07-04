@@ -146,7 +146,6 @@ export default function Flycard({ flights = [], loading = false, error = null }:
   if (error) {
     return (
       <div className={`max-w-5xl mx-auto px-4 py-10 ${inter.variable}`}>
-
         <div className="bg-red-50 border-l-4 border-red-500 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -170,7 +169,6 @@ export default function Flycard({ flights = [], loading = false, error = null }:
     <div>
 
       <div className="bg-[#e6e1dc] flex justify-center mt-20 px-4 p-8">
-
 
         <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl p-6 ">
           <div className="flex space-x-3 mb-4 text-sm font-semibold">
@@ -322,10 +320,10 @@ export default function Flycard({ flights = [], loading = false, error = null }:
 
                 <button
                   onClick={resetFilters}
-                  className="w-full py-2 px-4 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50"
-                >
+                  className="w-full py-2 px-4 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50">
                   Limpar filtros
                 </button>
+                
               </div>
             </div>
           </div>
@@ -506,8 +504,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}
                       className={`flex items-center gap-1 px-4 py-2 rounded-md ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
-                        }`}
-                    >
+                        }`}>
                       <ChevronLeft size={16} />
                       <span>Anterior</span>
                     </button>
@@ -520,8 +517,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                           className={`w-10 h-10 rounded-full flex items-center justify-center ${currentPage === page
                             ? 'bg-blue-600 text-white'
                             : 'text-gray-700 hover:bg-gray-100'
-                            }`}
-                        >
+                            }`}>
                           {page}
                         </button>
                       ))}
@@ -531,8 +527,7 @@ export default function Flycard({ flights = [], loading = false, error = null }:
                       onClick={() => handlePageChange(currentPage + 1)}
                       disabled={currentPage === totalPages}
                       className={`flex items-center gap-1 px-4 py-2 rounded-md ${currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:bg-blue-50'
-                        }`}
-                    >
+                        }`}>
                       <span>Próxima</span>
                       <ChevronRight size={16} />
                     </button>
@@ -544,7 +539,6 @@ export default function Flycard({ flights = [], loading = false, error = null }:
         </div>
       </div>
     </div>
-
 
   );
 }
