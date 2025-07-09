@@ -27,12 +27,9 @@ export default function Banner() {
 
         <div className="relative z-10 flex items-center justify-start h-full px-14">
           <div className=" max-w-3xl">
-            <p className="text-white text-sm  tracking-wide">
-              VIAGENS INTERNACIONAIS | VIAGENS NACIONAIS
-            </p>
-
+        
             <h1 className="text-[#FFF700] text-4xl md:text-7xl font-bold  leading-none drop-shadow">
-              Atlantic Travel
+              Atlantic Travel Lda.
             </h1>
 
             <h2 className="text-white text-4xl  font-semibold leading-snug drop-shadow">

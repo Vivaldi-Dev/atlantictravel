@@ -36,7 +36,7 @@ export default function Cards() {
                         animate={isInView ? { opacity: 1 } : {}}
                         transition={{ delay: 0.4 }}
                         className="text-base md:text-lg max-w-3xl mx-auto">
-                        <p>Desde 2009, já facilitamos mais de 500.000 serviços turísticos, consolidando-nos</p>
+                        <p>Ao longo da nossa existência, facilitamos milhares de serviços turísticos, consolidando-nos</p>
                         <p>como uma das agências mais experientes de Moçambique.</p>
                     </motion.div>
                 </motion.div>

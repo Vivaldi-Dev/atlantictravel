@@ -72,14 +72,13 @@ export default function Seguros() {
                         whileHover={{ y: -10 }}
                         className='bg-[#F5F5F5] p-6 rounded-lg hover:shadow-xl transition-all'>
                         <h3 className='text-black font-bold text-xl mb-4'>Experiências Memoráveis Sob Medida</h3>
-                        <p className='text-[#000000A6] mb-4'>Experiências Memoráveis Sob Medida</p>
                         <ul className="list-disc pl-5 text-[#000000A6]">
                             <li>Criação de pacotes turísticos personalizados</li>
                             <li>Roteiros culturais, de aventura ou relaxamento</li>
                             <li>Excursões em grupo com guias especializados</li>
                             <li>Programas temáticos (lua-de-mel, aniversários)</li>
                         </ul>
-                        <p>Já planejamos mais de 1.000 pacotes turísticos personalizados!</p>
+                        <p>Planejamos milhares de pacotes turísticos personalizados!</p>
                     </motion.div>
                 </div>
             </div>

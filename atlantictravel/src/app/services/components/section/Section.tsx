@@ -48,7 +48,7 @@ export default function Section() {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 className='text-xl mb-6'>
-                Regularize Seus Documentos com Facilidade.
+                Regularize Seus Documentos com Facilidade:
               </motion.p>
               
               <motion.ul 
