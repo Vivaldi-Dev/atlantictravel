@@ -34,7 +34,6 @@ export default function page() {
                                     <p className='text-center'> 15 Jul 2025 </p>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className=' border-r-2 h-full border-[#00000057] '>
@@ -44,7 +43,6 @@ export default function page() {
                                     <p className='text-center'>16 Jul 2025</p>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className='  h-full '>
@@ -54,7 +52,6 @@ export default function page() {
                                     <p className='text-center'>1 Traveller, Economy</p>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>

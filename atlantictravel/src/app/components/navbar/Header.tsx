@@ -14,7 +14,7 @@ export default function Header() {
     return (
         <>
             <div className="fixed top-0 w-full z-[999] bg-white shadow-sm">
-                <div className='max-w-[1640px] mx-auto py-3 px-4'> 
+                <div className='max-w-[1640px] mx-auto py-3 px-4'>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
                             <Image
@@ -49,14 +49,22 @@ export default function Header() {
                             </ul>
                         </div>
 
-                        <div className='hidden lg:flex items-center gap-4 p-4 rounded-full bg-[#FFF700]'>
-                            <Image
-                                src="/telefone1.png"
-                                alt="Telefone"
-                                width={20}
-                                height={20}
-                            />
-                            <p className='text-sm font-semibold text-[#0871B5]'>Ligue grátis: 82 / 84 1781</p>
+                        <div className='hidden lg:flex items-center gap-4 p-2 rounded-xl bg-[#FFF700]'>
+                            <div>
+                                <div className='flex items-center gap-2'>
+                                    {/* <Image
+                                        src="/telefone1.png"
+                                        alt="Telefone"
+                                        width={20}
+                                        height={20} /> */}
+                                    
+                                    <p className='text-sm font-semibold text-[#0871B5]'>Ligue grátis:</p>
+                                </div>
+
+                                <p className='text-[11px] font-semibold text-[#0871B5]'>84 1781 | 82 1781</p>
+                            </div>
+
+
                         </div>
 
                         <button

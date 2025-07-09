@@ -26,39 +26,20 @@ export default function Banner() {
                     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
 
                         className={`max-w-2xl ${inter.variable} font-inter`}>
-                        <p className='text-white text-sm md:text-base leading-none	'>
-                            VIAGENS INTERNACIONAIS | VIAGENS NACIONAIS
-                        </p>
 
-                        <h1 className='text-[#FFF700] text-4xl md:text-6xl lg:text-7xl  font-bold leading-none	 '>
-                            Atlantic Travel
+                        <h1 className='text-[#FFF700] text-4xl md:text-6xl lg:text-7xl text-nowrap  font-bold leading-none	 '>
+                            Atlantic Travel Lda.
                         </h1>
 
-                        <h2 className='text-[#FFF700] text-3xl md:text-5xl lg:text-6xl  font-bold leading-tight '>
-                            Lda. Viagens & Turismo
-                        </h2>
 
-                        <p className='text-white text-3xl md:text-5xl lg:text-6xl md:text-nowrap font-bold mb-4'>
-                            Código IATA 5621035-0
-                        </p>
-
-                        <div className='text-white  text-base md:text-lg'>
+                        <div className='text-white  text-base md:text-lg mt-5'>
                             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                                Fundada há mais de 15 anos, a Atlantic Travel nasceu com a missão de
-                            </motion.p>
-
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-                                oferecer experiências que vão além do turismo. O nosso propósito é ajudar
-                            </motion.p>
-
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
-                                pessoas a realizarem sonhos, explorarem culturas e criarem memórias com
-                            </motion.p>
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+                                A Atlantic Travel nasceu com a missão de oferecer experiências que vão além do turismo. 
+                                O nosso propósito é ajudar pessoas a realizarem sonhos, explorarem culturas e criarem memórias com
                                 segurança, personalização e atendimento humano em cada detalhe.
                             </motion.p>
 
-                            <div className='flex items-center gap-5 mt-5 '>
+                            <div className='flex items-center gap-5 mt-10 '>
                                 <div className='bg-white shadow p-4 rounded max-w-36 w-full'>
                                     <p className='font-bold text-black leading-none'>+15</p>
                                     <p className='text-[10px] font-semibold text-black'>Anos de Experiência</p>
@@ -70,7 +51,7 @@ export default function Banner() {
                                 </div>
 
                                 <div className='bg-white shadow p-4 rounded max-w-36 w-full'>
-                                    <p className='font-bold text-black leading-none'>500+</p>
+                                    <p className='font-bold text-black leading-none'>+500</p>
                                     <p className='text-[10px] font-semibold text-black'>Razões para Viajar</p>
                                 </div>
                             </div>
