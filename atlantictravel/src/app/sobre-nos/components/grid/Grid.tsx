@@ -17,7 +17,7 @@ export default function Grid() {
     return (
         <div
             ref={ref}
-            className={`w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden mt-16 ${playfair.variable} font-playfair`}>
+            className={`w-full py-8 bg-gradient-to-b from-[#fff] to-[#B2DEE1] relative overflow-hidden mt-16 ${playfair.variable} font-sans`}>
             <div className='container mx-auto px-4'>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -25,8 +25,7 @@ export default function Grid() {
                     transition={{ duration: 0.6 }}
                     className='mb-10'>
 
-                    <p className="text-xl">O nosso lema</p>
-                    <p className="text-lg md:text-xl italic font-bold">&quot;o planeamento personalizado e seguro da sua viagem&quot;</p>
+
                 </motion.div>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-20 items-start'>
@@ -42,7 +41,7 @@ export default function Grid() {
                             <div className='flex gap-4'>
                                 <motion.div
                                     whileHover={{ rotate: 15 }}
-                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'>
+                                    className='w-12 h-12 p-2 rounded-full bg-[#EECE2B] flex items-center justify-center'>
                                     <Image
                                         src="/icons/aviaop.png"
                                         alt="Ícone de avião"
@@ -54,10 +53,9 @@ export default function Grid() {
                                 <div>
                                     <p className='font-bold text-black text-sm'>O que nos move?</p>
                                     <div className='text-[#000000A6] text-sm'>
-                                        <p>Acreditamos que cada viagem é única, e cada cliente também. Por isso, criamos</p>
-                                        <p>soluções à medida de cada história, com pacotes que respeitam o teu ritmo,</p>
-                                        <p>orçamento e estilo de vida. Mais que levar-te a um destino, queremos</p>
-                                        <p>caminhar contigo durante toda a jornada.</p>
+                                        <p>Acreditamos que cada viagem é única, e cada cliente também. Por isso, criamos soluções à medida de cada história, com pacotes que respeitam o teu ritmo,
+                                            orçamento e estilo de vida. Mais que levar-te a um destino, queremos </p>
+
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +72,7 @@ export default function Grid() {
                             <div className='flex gap-4'>
                                 <motion.div
                                     whileHover={{ rotate: 15 }}
-                                    className='w-12 h-12 rounded-full bg-[#EECE2B] flex items-center justify-center'>
+                                    className='w-12 h-12  rounded-full bg-[#EECE2B] flex items-center justify-center'>
                                     <Image
                                         src="/icons/MicrosoftTeamsLogo.png"
                                         alt="Ícone de equipe"
@@ -84,11 +82,7 @@ export default function Grid() {
                                 <div>
                                     <p className='font-bold text-black text-sm'>A nossa equipa</p>
                                     <div className='text-[#000000A6]'>
-                                        <p>A AtlanticTravel é constituída de pessoas que amam o que fazem. Contamos com</p>
-                                        <p>consultores experientes, emissores técnicos, gestores operacionais e motoristas</p>
-                                        <p>dedicados, todos alinhados com o nosso compromisso com a excelência</p>
-                                        <p>Acreditamos no poder de uma boa viagem. Uma que transforma. Que aproxima</p>
-                                        <p>Que renova.&quot; Equipe AtlanticTravel</p>
+                                        <p>A Atlantic Travel é constituída por pessoas que  amam o que fazem.  Contamos com consultores experientes,  emissores técnicos, gestores operacionais e  motoristas dedicados, todos alinhados com o  nosso compromisso com a excelência. <br /> “Acreditamos no poder de uma boa viagem. Uma que  transforma. Que aproxima. Que renova.” Equipe AtlanticTrave</p>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +112,7 @@ export default function Grid() {
                                         <p>Valorizamos as nossas raízes e promovemos o turismo nacional de forma</p>
                                         <p>responsável. Incentivamos a descoberta do que é nosso, respeitando o meio</p>
                                         <p>ambiente e as comunidades locais. Acreditamos que o turismo pode ser uma</p>
-                                        <p>ferramenta de educação, inclusão e desenvolvimento</p>
+                                        <p>ferramenta de educação, inclusão e desenvolvimento.</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +129,7 @@ export default function Grid() {
                             alt="Viagem de luxo"
                             fill
                             className="object-cover rounded-lg"
-                            sizes="(max-width: 768px) 100vw, 50vw"/>
+                            sizes="(max-width: 768px) 100vw, 50vw" />
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}

@@ -40,7 +40,7 @@ export default function Footer() {
                     className="text-sm space-y-3 transition-transform duration-300 cursor-default">
                     <p className="font-semibold text-base">Seu próximo destino começa aqui!</p>
                     <p>Fique por dentro das melhores promoções e roteiros personalizados.</p>
-                    <p><strong>Horário Comercial:</strong> Segunda a Sexta-feira (9h00 - 17h00)</p>
+                    <p><strong>Horário Comercial:</strong> Segunda a Sexta-feira (8h00 - 17h00)</p>
                 </motion.div>
 
                 <motion.div
@@ -52,7 +52,7 @@ export default function Footer() {
                     <p><strong>Telefones:</strong> +258-21400398 | +258-823061833 | +258-84313666 | +258-863061835</p>
                     <p><strong>Linha Verde 24h:</strong> 1781 (Mcel e Vodacom)</p>
                     <p><strong>Email:</strong> info@atlantictravel.co.mz</p>
-                    <p><strong>Sede:</strong> Av. Paulo Samuel Kamkomba, Nº 986, RC, Flat Nº 1</p>
+                    <p><strong>Sede:</strong> Av. Paulo Samuel Kamkomba, Nº 986, RC, Flat Nº 1, Maputo</p>
                     <p><strong>Sucursal:</strong> Av. Da Liberdade Nº 23, Tete</p>
 
                     <div className='flex gap-3 items-center mt-4'>

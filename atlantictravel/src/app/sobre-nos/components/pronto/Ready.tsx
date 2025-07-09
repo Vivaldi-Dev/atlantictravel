@@ -26,12 +26,11 @@ export default function Ready() {
             viewport={{ once: true }}>
 
             <div className={`${playfair.variable} font-playfair`}>
-              <p className="text-2xl md:text-3xl italic font-bold mb-1">Pronto para a tua próxima</p>
-              <p className="text-2xl md:text-3xl italic font-bold ">aventura?</p>
+              <p className="text-2xl md:text-3xl italic font-bold mb-1">Pronto para a sua próxima aventura?</p>
             </div>
             
             <p className="text-base md:text-lg mt-2">
-              Simula agora o teu orçamento online ou fala com um dos nossos consultores.
+              Simula agora o seu orçamento  ou fala com um dos nossos consultores.
             </p>
             
             <p className="text-sm italic opacity-80">
